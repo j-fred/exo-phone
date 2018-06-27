@@ -3,27 +3,27 @@ var router = express.Router();
 var phoneController = require('../controllers/phoneController.js');
 
 /*
- * GET
+ * lister les telephones
  */
 router.get('/', phoneController.list);
 
 /*
- * GET
+ * affiche un telselon id
  */
 router.get('/:id', phoneController.show);
 
 /*
- * POST
+ * Créé un tel dans la bdd
  */
 router.post('/', phoneController.create);
 
 /*
- * PUT
+ * maj d'un tel
  */
-router.put('/:id', phoneController.update);
+router.post('/:id', phoneController.update);
 
 /*
- * DELETE
+ * effacer un tel
  */
 router.delete('/:id', phoneController.remove);
 

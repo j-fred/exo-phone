@@ -18,7 +18,7 @@ module.exports = {
                     error: err
                 });
             }
-            return res.json(phones);
+            res.render("../views/admin/index",{phones:phones,title: 'Phone 974'});
         });
     },
 
@@ -39,7 +39,7 @@ module.exports = {
                     message: 'No such phone'
                 });
             }
-            return res.json(phone);
+            res.render("../views/admin/index",{phones:phones});
         });
     },
 
@@ -54,7 +54,6 @@ module.exports = {
 			img : req.body.img,
 			capacite : req.body.capacite,
 			dim : req.body.dim
-
         });
 
         phone.save(function (err, phone) {
@@ -64,7 +63,7 @@ module.exports = {
                     error: err
                 });
             }
-            return res.status(201).json(phone);
+            //res.redirect("/admin");
         });
     },
 
